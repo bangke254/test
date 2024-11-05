@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mt-5 text-center">
+    <h1>Upload Successful</h1>
+    <p>The image has been uploaded successfully. You can view it below:</p>
+    <img src="{{ url_for('static', filename='uploads/' ~ filename) }}" alt="Uploaded Image" class="img-fluid">
+    <br><br>
+    <a href="{{ url_for('predict', filename=filename) }}" class="btn btn-success">Predict</a>
+</div>
+{% endblock %}
